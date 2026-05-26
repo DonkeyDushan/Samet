@@ -5,14 +5,22 @@ import { defineConfig } from 'vite';
 
 import packageJson from './package.json';
 
+type ReactPluginOptionsWithBabel = Parameters<typeof react>[0] & {
+  babel?: {
+    plugins: Array<string | [string, unknown]>;
+  };
+};
+
+const reactPluginOptions: ReactPluginOptionsWithBabel = {
+  babel: {
+    plugins: [['babel-plugin-react-compiler', {}]],
+  },
+};
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react({
-      babel: {
-        plugins: [['babel-plugin-react-compiler', {}]],
-      },
-    } as never),
+    react(reactPluginOptions),
   ],
   resolve: {
     alias: { '@': path.resolve(__dirname, './src') },

@@ -10,10 +10,10 @@ function App() {
     <Container maxWidth="sm">
       <Box sx={{ py: 8, textAlign: 'center' }}>
         <Typography component="h1" variant="h4" gutterBottom>
-          Samet starter
+          Samet Starter
         </Typography>
         <Typography color="text.secondary" sx={{ mb: 3 }}>
-          React + TypeScript + Vite + MUI konfigurace je připravena.
+          React + TypeScript + Vite + MUI setup is ready.
         </Typography>
         <Button variant="contained">MUI komponenty fungují</Button>
       </Box>
