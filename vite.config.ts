@@ -17,8 +17,16 @@ const reactPluginOptions: ReactPluginOptionsWithBabel = {
   },
 };
 
+// On GitHub Pages the app is served at /<repo-name>/ so we derive the base
+// from the GITHUB_REPOSITORY env var (format: "owner/repo") that is always
+// present in GitHub Actions.  Locally it falls back to '/'.
+const repoBase = process.env.GITHUB_REPOSITORY
+  ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/`
+  : '/';
+
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: repoBase,
   plugins: [
     react(reactPluginOptions),
   ],

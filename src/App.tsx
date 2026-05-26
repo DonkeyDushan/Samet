@@ -15,7 +15,7 @@ function App() {
         <Typography color="text.secondary" sx={{ mb: 3 }}>
           React + TypeScript + Vite + MUI setup is ready.
         </Typography>
-        <Button variant="contained">MUI komponenty fungují</Button>
+        <Button variant="contained">MUI components work</Button>
       </Box>
     </Container>
   );
